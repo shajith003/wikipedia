@@ -1,0 +1,117 @@
+<head>
+    <title>Wikipedia </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .logo {
+            width: 200px;
+            height: 200px;
+            background: transparent;
+            position: relative;
+            z-index: 2;
+            margin-bottom: 30px;
+            transform: translate(-30%, -20%);
+        }
+        h1, h3 {
+            margin: 0;
+            padding: 0;
+        }
+        .languages {
+            position: absolute;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            width: 500px; 
+            height: 500px; 
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .language-item {
+            position: absolute;
+            font-weight: bold;
+            font-size: 16px;
+            color: blue;
+            z-index: 3;
+        }
+        .language-item .subtext {
+            font-size: 12px;
+            color: gray;
+        }
+        .search-bar {
+            position: absolute;
+            bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 3;
+        }
+        input {
+            padding: 10px;
+            width: 300px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+        a:hover {
+            color: darkblue;
+        }
+    </style>
+</head>
+<body>
+    <h1><br>Wikipedia</h1>
+    <h3>The free encyclopedia</h3>
+    <div class="container">
+        <div class="logo"><img src="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@1.5x.png" width="330" height="300"> </div>
+        <div class="languages">
+            <div class="language-item" style="transform: rotate(0deg) translateX(250px) rotate(0deg);"><a href="https://en.wikipedia.org" target="_blank">English <span class="subtext"><br>6,942,000+ articles</span></a></div>
+            <div class="language-item" style="transform: rotate(36deg) translateX(250px) rotate(-36deg);"><a href="https://ja.wikipedia.org" target="_blank">日本語 <span class="subtext"><br>1,445,000+ 記事</span></a></div>
+            <div class="language-item" style="transform: rotate(72deg) translateX(250px) rotate(-72deg);"><a href="https://ru.wikipedia.org" target="_blank">Русский <span class="subtext"><br>2 020 000+ статей</span></a></div>
+            <div class="language-item" style="transform: rotate(108deg) translateX(250px) rotate(-108deg);"><a href="https://de.wikipedia.org" target="_blank">Deutsch <span class="subtext"><br>2.979.000+ Artikel</span></a></div>
+            <div class="language-item" style="transform: rotate(144deg) translateX(250px) rotate(-144deg);"><a href="https://es.wikipedia.org" target="_blank">Español <span class="subtext"><br>2.003.000+ artículos</span></a></div>
+            <div class="language-item" style="transform: rotate(180deg) translateX(250px) rotate(-180deg);"><a href="https://fr.wikipedia.org" target="_blank">Français <span class="subtext"><br>2 659 000+ articles</span></a></div>
+            <div class="language-item" style="transform: rotate(216deg) translateX(250px) rotate(-216deg);"><a href="https://it.wikipedia.org" target="_blank">Italiano <span class="subtext"><br>1.900.000+ voci</span></a></div>
+            <div class="language-item" style="transform: rotate(252deg) translateX(250px) rotate(-252deg);"><a href="https://zh.wikipedia.org" target="_blank">中文 <span class="subtext"><br>1,459,000+ 条目 / 條目</span></a></div>
+            <div class="language-item" style="transform: rotate(288deg) translateX(250px) rotate(-288deg);"><a href="https://fa.wikipedia.org" target="_blank">فارسی <span class="subtext"><br>۱٬۰۲۶٬۰۰۰+ مقاله</span></a></div>
+            <div class="language-item" style="transform: rotate(324deg) translateX(250px) rotate(-324deg);"><a href="https://pl.wikipedia.org" target="_blank">Polski <span class="subtext"><br>1 645 000+ haseł</span></a></div>
+        </div>
+        <div class="search-bar">
+            <input type="text" id="search" placeholder="Search Wikipedia">
+            <button onclick="searchWiki()">Search</button>
+        </div>
+    </div>
+    <script>
+        function searchWiki() {
+            let query = document.getElementById('search').value;
+            if (query) {
+                window.location.href = `https://en.wikipedia.org/wiki/Special:Search?search=${query}`;
+            }
+        }
+    </script>
+</body>
+</html>
